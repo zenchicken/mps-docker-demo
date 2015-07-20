@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo yum install docker java-1.8.0-openjdk

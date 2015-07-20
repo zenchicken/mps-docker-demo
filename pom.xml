@@ -122,6 +122,28 @@
 				-->
 			</plugin>
 		</plugins>
+        <resources>
+            <!-- regular resource processsing for everything except logback.xml -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>scripts/</exclude>
+                    <exclude>appspec.yml</exclude>
+                </excludes>
+            </resource>
+            <!-- resource processsing with a different output directory
+                 for logback.xml -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>scripts/</include>
+                    <include>appspec.yml</include>
+                </includes>
+                <!-- relative to target/classes
+                     i.e. ${project.build.outputDirectory} -->
+                <targetPath>..</targetPath>
+            </resource>
+        </resources>
 	</build>
 
 </project>
