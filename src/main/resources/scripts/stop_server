@@ -1,0 +1,5 @@
+#!/bin/bash
+isExistApp=`pgrep java8`
+if [[ -n  $isExistApp ]]; then
+    pkill "java8"
+fi
